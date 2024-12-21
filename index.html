@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Controle de Vendas</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Controle de Vendas</h1>
+        <div id="login">
+            <h2>Login</h2>
+            <input type="text" id="username" placeholder="Usuário" required>
+            <input type="password" id="password" placeholder="Senha" required>
+            <button onclick="login()">Entrar</button>
+            <p id="login-message"></p>
+        </div>
+
+        <div id="dashboard" style="display:none;">
+            <h2>Painel de Controle</h2>
+            <button onclick="showSales()">Registrar Venda</button>
+            <button onclick="showStock()">Registrar Entrada/Saída</button>
+            <button onclick="logout()">Sair</button>
+
+            <div id="sales" style="display:none;">
+                <h3>Registrar Venda</h3>
+                <input type="text" id="sale-amount" placeholder="Valor da Venda" required>
+                <button onclick="registerSale()">Registrar</button>
+            </div>
+
+            <div id="stock" style="display:none;">
+                <h3>Registrar Entrada/Saída</h3>
+                <input type="text" id="stock-amount" placeholder="Valor" required>
+                <select id="stock-type">
+                    <option value="entrada">Entrada</option>
+                    <option value="saida">Saída</option>
+                </select>
+                <button onclick="registerStock()">Registrar</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
