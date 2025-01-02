@@ -44,3 +44,30 @@ function registerStock() {
     alert(`${type.charAt(0).toUpperCase() + type.slice(1)} registrada: R$ ${amount}`);
     document.getElementById("stock-amount").value = "";
 }
+
+// Funções para mostrar e ocultar as telas de registro e login
+function showRegister() {
+    document.getElementById("register").style.display = "block";
+    document.getElementById("login").style.display = "none";
+}
+
+function showLogin() {
+    document.getElementById("register").style.display = "none";
+    document.getElementById("login").style.display = "block";
+}
+
+// Função para cadastrar novo usuário
+function registerUser() {
+    const newUsername = document.getElementById("new-username").value;
+    const newPassword = document.getElementById("new-password").value;
+    const message = document.getElementById("register-message");
+
+    if (newUsername in users) {
+        message.textContent = "Usuário já existe!";
+    } else {
+        users[newUsername] = { password: newPassword, role: "funcionario" };
+        message.textContent = "Usuário cadastrado com sucesso!";
+        document.getElementById("new-username").value = "";
+        document.getElementById("new-password").value = "";
+    }
+}

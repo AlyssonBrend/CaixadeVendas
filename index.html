@@ -9,12 +9,23 @@
 <body>
     <div class="container">
         <h1>Controle de Vendas</h1>
+
+        <div id="register" style="display:none;">
+            <h2>Cadastrar Novo Usuário</h2>
+            <input type="text" id="new-username" placeholder="Usuário" required>
+            <input type="password" id="new-password" placeholder="Senha" required>
+            <button onclick="registerUser()">Cadastrar</button>
+            <p id="register-message"></p>
+            <button onclick="showLogin()">Voltar ao Login</button>
+        </div>
+
         <div id="login">
             <h2>Login</h2>
             <input type="text" id="username" placeholder="Usuário" required>
             <input type="password" id="password" placeholder="Senha" required>
             <button onclick="login()">Entrar</button>
             <p id="login-message"></p>
+            <button onclick="showRegister()">Cadastrar Novo Usuário</button>
         </div>
 
         <div id="dashboard" style="display:none;">
